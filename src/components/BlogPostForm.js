@@ -40,4 +40,8 @@ const styles = StyleSheet.create({
   }
 });
 
+BlogPostForm.defaultProps = {
+  initialValues: { title: '', content: '' }
+};
+
 export default BlogPostForm;

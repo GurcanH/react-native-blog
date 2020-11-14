@@ -15,6 +15,14 @@ const IndexScreen = ({ navigation }) => {
 
   useEffect(() => {
     getBlogPosts();
+    const listener = navigation.addListener('didFocus', () => {
+      getBlogPosts();
+    });
+
+    //* willunmount equivelant
+    return () => {
+      listener.remove();
+    };
   }, []);
 
   return (
